@@ -1,0 +1,26 @@
+a.
+SELECT categories.title FROM products
+INNER JOIN product_category ON products.id = product_category.product_id
+INNER JOIN categories ON categories.id = product_category.category_id
+WHERE products.id IN (9, 14, 6, 7, 2)
+GROUP BY category.id
+
+b.
+SELECT products.* FROM products
+INNER JOIN product_category ON products.id = product_category.product_id
+INNER JOIN categories ON categories.id = product_category.category_id
+WHERE categories.id = 2 OR (categories.parent_id = 2 AND categories.id IN (3, 4, 5))
+
+c.
+SELECT COUNT(category_id) FROM product_category
+WHERE category_id IN (7, 8, 9)
+GROUP BY category_id
+
+d.
+SELECT COUNT(products.id) FROM products
+INNER JOIN product_category ON products.id = product_category.product_id
+WHERE product_category.category_id IN (3, 4, 5)
+GROUP BY products.id
+
+e.
+SELECT 
