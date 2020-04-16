@@ -12,7 +12,7 @@
 
 ### How use
 
-App consist of 2 commands
+App has 2 commands:
 
 1. Get employee permissions:
 `$ bin/console permission-list <employee>`
